@@ -1,0 +1,13 @@
+---
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9001 
+  application:
+    name: RatingService
+  sleuth:
+    sampler:
+      percentage: 0.5
+      
+server:
+  port: ${PORT:${SERVER_PORT:0}} 
