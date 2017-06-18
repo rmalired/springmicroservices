@@ -1,0 +1,17 @@
+---
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9001
+  application:
+    name: PricingService
+  sleuth:
+    sampler:
+      percentage: 0.5
+      
+server:
+  port: ${PORT:${SERVER_PORT:0}} 
+
+management:
+  security:
+    enabled: false  

@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "indiv.rakesh.springcloud.PricingController",
+      "name": "bookstore",
+      "type": "indiv.rakesh.springcloud.PricingController"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "indiv.rakesh.springcloud.PricingController",
+      "name": "bookstore.all-prices",
+      "type": "java.util.List<indiv.rakesh.springcloud.Price>"
+    },
+    {
+      "sourceType": "indiv.rakesh.springcloud.PricingController",
+      "name": "bookstore.discount-percentage",
+      "type": "java.lang.String"
+    }
+  ]
+}
