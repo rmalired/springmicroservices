@@ -1,0 +1,46 @@
+---
+spring:
+  profiles: primary
+  application:
+    name: eureka-cluster
+server:
+  port: 9011  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://secondaryregistry:9012/eureka/,http://tertiaryregistry:9013/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: primaryregistry
+---
+spring:
+  profiles: secondary
+  application:
+    name: eureka-cluster
+server:
+  port: 9012  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://tertiaryregistry:9013/eureka/,http://primaryregistry:9011/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: secondaryregistry
+---
+spring:
+  profiles: tertiary
+  application:
+    name: eureka-cluster
+server:
+  port: 9013  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9011/eureka/,http://localhost:9012/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: tertiaryregistry
+      
