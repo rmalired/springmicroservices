@@ -1,0 +1,12 @@
+---
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9001
+  application:
+    name: ServiceGateway
+  sleuth:
+    sampler:
+      percentage: 0.5
+server:
+  port: 9080

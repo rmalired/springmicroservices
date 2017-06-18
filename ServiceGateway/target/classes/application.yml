@@ -1,0 +1,28 @@
+zuul:
+  prefix: /bnstore
+  ignored-services: '*'      
+  routes:
+    productdetail:
+      path: /productdetail/**
+      serviceId: PRODUCTSERVICECOMPOSITE
+      strip-prefix: false
+    products:
+      path: /products*
+      service-id: PRODUCTSERVICECOMPOSITE
+      strip-prefix: false
+    comments:
+      path: /comments/**
+      service-id: COMMENTSSERVICE
+      strip-prefix: false
+    pricing:
+      path: /price/**
+      service-id: PRICINGSERVICE
+      strip-prefix: false
+    product:
+      path: /product/**
+      service-id: PRODUCTSERVICE
+      strip-prefix: false
+    rating:
+      path: /rating/**
+      service-id: RATINGSERVICE
+      strip-prefix: false    
